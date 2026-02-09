@@ -1,0 +1,32 @@
+[project]
+name = "blind-75"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["src"]
+python_files = ["*_test.py", "test_*.py"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N"]
+ignore = []
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+# Optional: if you want pylint too (slower/more opinionated)
+[tool.pylint.main]
+py-version = "3.11"
+jobs = 0
+disable = [
+  "missing-module-docstring",
+  "missing-function-docstring",
+  "missing-class-docstring",
+]
