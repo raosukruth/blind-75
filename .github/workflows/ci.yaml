@@ -33,6 +33,8 @@ jobs:
         run: ruff check .
 
       - name: Pylint
+        env:
+          PYTHONPATH: src
         run: pylint src
 
       - name: Pytest
